@@ -1,0 +1,24 @@
+./elastic-mapreduce --create --alive --name "page rank block node" --instance-count 20
+
+./elastic-mapreduce -j j-2EA01O7CO6TC7 --modify-instance-group ig-21PTCNID0KXHD --instance-count 20
+
+
+./elastic-mapreduce -j j-PLH0L49P3X8R --jar s3n://cs5300-kw427-proj2/WordCount.jar --main-class org.myorg.WordCount --arg s3n://cs5300-kw427-proj2/input/file --arg s3n://cs5300-kw427-proj2/output
+
+./elastic-mapreduce -j j-2ZIS6QZJCG26P --jar s3n://cs5300-kw427-proj2/PageRank.jar --main-class org.myorg.PageRank --arg s3n://cs5300-kw427-proj2/iter00/input.txt --arg s3n://cs5300-kw427-proj2/output_prtest
+
+./elastic-mapreduce -j j-2ZIS6QZJCG26P --jar s3n://cs5300-kw427-proj2/PageRank.jar --main-class org.myorg.PageRank --arg s3n://cs5300-kw427-proj2/iter00/out --arg s3n://cs5300-kw427-proj2/output_prLarge
+
+
+./elastic-mapreduce -j j-2ZIS6QZJCG26P --jar s3n://cs5300-kw427-proj2/BlockedPageRank.jar --main-class org.myorg.BlockedPageRank --arg s3n://cs5300-kw427-proj2/blockinput/blockinputdata --arg s3n://cs5300-kw427-proj2/output_blocked
+
+
+./elastic-mapreduce -j j-2EA01O7CO6TC7 --jar s3n://cs5300-kw427-proj2/BlockedPageRank.jar --main-class org.myorg.BlockedPageRank --arg s3n://cs5300-kw427-proj2/blockinput/block_out --arg s3n://cs5300-kw427-proj2/output_blockedOriginal
+
+run json
+./elastic-mapreduce --create --alive --name "aaa" --json custom_jar_jobflow_2.json
+
+./elastic-mapreduce --create --alive --name "aaa" --instance-count 2 --json custom_jar_jobflow_2.json
+
+
+./elastic-mapreduce -j j-xxxxxx --json custom_jar_jobflow_2.json

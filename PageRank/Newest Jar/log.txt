@@ -1,0 +1,10 @@
+Fixed a critical bug.
+
+N is 685230.
+Run until converge for every Block.
+Run until converge for entire graph
+
+
+-------------------------
+Formatted output
+Sink node's pagerank

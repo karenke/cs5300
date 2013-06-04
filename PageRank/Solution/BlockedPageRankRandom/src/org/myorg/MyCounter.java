@@ -1,0 +1,5 @@
+package org.myorg;
+
+public enum MyCounter {
+	GLOBAL_RESIDUAL_COUNTER, LOCAL_ITERATION_NUM_COUNTER, BLOCK_COUNTER;
+}

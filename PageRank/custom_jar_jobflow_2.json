@@ -1,0 +1,14 @@
+{
+   "Name": "Custom Jar WordCount Example", 
+   "ActionOnFailure": "CONTINUE", 
+   "HadoopJarStep": 
+   { 
+      "MainClass": "org.myorg.WordCount", 
+      "Jar": "s3n://cs5300-kw427-proj2/WordCount.jar",  
+      "Args": 
+         [ 
+            "s3n://cs5300-kw427-proj2/input/file", 
+            "s3n://cs5300-kw427-proj2/output2"
+         ] 
+      }
+}
